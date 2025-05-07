@@ -1,0 +1,64 @@
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f1f1f1;
+            overflow: hidden;
+            touch-action: none;
+            font-family: Arial, sans-serif;
+            perspective: 1000px;
+        }
+        
+        .compass-container {
+            position: relative;
+            width: 80vmin;
+            height: 80vmin;
+            max-width: 400px;
+            max-height: 400px;
+        }
+        
+        #compass-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform-style: preserve-3d;
+            transition: transform 0.1s linear;
+        }
+        
+        .instructions {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            pointer-events: none;
+        }
+        
+        .pressure-indicator {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .pressure-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #4aa8df, #a0d8f1);
+            transition: width 0.2s;
+        }
+        
+        @media (max-width: 768px) {
+            .instructions {
+                font-size: 12px;
+            }
+        }
