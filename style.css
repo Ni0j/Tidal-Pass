@@ -1,76 +1,99 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f1f1f1;
-            overflow: hidden;
-            touch-action: none;
-            font-family: Arial, sans-serif;
-            perspective: 1000px;
-            -webkit-touch-callout: none; 
-            user-select: none; 
-        }
-        
-        .click-zone {
-            flex: 1;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f1;
+    touch-action: none;
+    font-family: Arial, sans-serif;
+    perspective: 1000px;
+    -webkit-touch-callout: none; 
+    user-select: none; 
+}
 
-        
-        .compass-container {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #compass-video {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            transform-style: preserve-3d;
-            transition: transform 0.1s linear;
-        }
-        
-        .instructions {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            pointer-events: none;
-        }
-        
-        .pressure-indicator {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        
-        .pressure-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, #4aa8df, #a0d8f1);
-            transition: width 0.2s;
-        }
-        
-        @media (max-width: 768px) {
-            .instructions {
-                font-size: 12px;
-            }
-        }
+.click-zone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    font-size: 2rem;
+    color: white;
+    background: rgba(0,0,0,0.1);
+    user-select: none;
+}
+
+#left-zone {
+    left: 0;
+}
+
+#right-zone {
+    right: 0;
+}
+
+.compass-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#compass-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+}
+
+.instructions {
+    position: relative;
+    z-index: 2;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.pressure-indicator {
+    position: relative;
+    z-index: 2;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.pressure-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #4aa8df, #a0d8f1);
+    transition: width 0.2s;
+}
+
+@media (max-width: 768px) {
+    .instructions {
+        font-size: 12px;
+    }
+}
