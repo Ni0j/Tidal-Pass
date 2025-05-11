@@ -35,6 +35,7 @@ body {
     z-index: 1;
     transform-style: preserve-3d;
     transition: transform 0.1s linear;
+    transform: translateY(-5%);
 }
 
 .instructions {
