@@ -33,9 +33,9 @@ body {
     height: 100vh;
     object-fit: cover;
     z-index: 1;
+    transform: translateY(-20px);
     transform-style: preserve-3d;
     transition: transform 0.1s linear;
-    transform: translateY(-5%);
 }
 
 .instructions {
