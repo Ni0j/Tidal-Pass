@@ -4,10 +4,16 @@ html, body {
     padding: 0;
 }
 
-body {
+body, .compass-container {
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
+    position: relative;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,36 +23,6 @@ body {
     perspective: 1000px;
     -webkit-touch-callout: none; 
     user-select: none; 
-}
-
-.click-zone {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-    font-size: 2rem;
-    color: white;
-    background: rgba(0,0,0,0.1);
-    user-select: none;
-}
-
-#left-zone {
-    left: 0;
-}
-
-#right-zone {
-    right: 0;
-}
-
-.compass-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
 }
 
 #compass-video {
